@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b61llx1a6lij7"]
+
+[ext_resource type="Texture2D" uid="uid://d2g5xvv7prc14" path="res://assets/icon.svg" id="1_d81rb"]
+[ext_resource type="Script" uid="uid://c7fkiwq024y3s" path="res://scripts/card.gd" id="2_6u4wf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5vfr"]
+size = Vector2(51.199997, 51.199997)
+
+[node name="Card" type="TextureRect" unique_id=1398120688]
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.05, 0.05)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_d81rb")
+expand_mode = 5
+script = ExtResource("2_6u4wf")
+
+[node name="CardArea" type="Area2D" parent="." unique_id=937868114]
+scale = Vector2(0.605, 0.605)
+
+[node name="CardCollision" type="CollisionShape2D" parent="CardArea" unique_id=627921845]
+position = Vector2(63.999992, 63.999992)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_v5vfr")
+
+[connection signal="mouse_entered" from="CardArea" to="." method="_on_card_area_mouse_entered"]
+[connection signal="mouse_exited" from="CardArea" to="." method="_on_card_area_mouse_exited"]

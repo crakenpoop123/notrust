@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ubi2784u3goj"]
+
+[ext_resource type="Script" uid="uid://c1epmm52dtol" path="res://scripts/main_level.gd" id="1_v3uhd"]
+
+[node name="MainLevel" type="Node2D" unique_id=1607043476]
+script = ExtResource("1_v3uhd")
+
+[node name="CardsGrid" type="GridContainer" parent="." unique_id=2016337057]
+offset_left = 252.0
+offset_right = 900.0
+offset_bottom = 648.0
+columns = 8
