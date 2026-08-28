@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ubi2784u3goj"]
 
 [ext_resource type="Script" uid="uid://c1epmm52dtol" path="res://scripts/main_level.gd" id="1_v3uhd"]
+[ext_resource type="PackedScene" uid="uid://dm2813agprxcr" path="res://scenes/person.tscn" id="2_ufxs0"]
 
 [node name="MainLevel" type="Node2D" unique_id=1607043476]
 script = ExtResource("1_v3uhd")
@@ -10,3 +11,16 @@ offset_left = 252.0
 offset_right = 900.0
 offset_bottom = 648.0
 columns = 8
+
+[node name="Person" parent="." unique_id=2105798426 instance=ExtResource("2_ufxs0")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PersonTimer" type="Timer" parent="." unique_id=1330627345]
+
+[connection signal="timeout" from="PersonTimer" to="." method="_on_person_timer_timeout"]
