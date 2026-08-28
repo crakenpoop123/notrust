@@ -29,3 +29,5 @@ func _process(delta: float) -> void:
 func _on_person_timer_timeout() -> void:
 	$Person.visible = !$Person.visible
 	
+	
+	$PersonTimer.start(person_time)

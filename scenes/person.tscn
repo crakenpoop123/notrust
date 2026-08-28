@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dm2813agprxcr"]
 
 [ext_resource type="Texture2D" uid="uid://d2g5xvv7prc14" path="res://assets/icon.svg" id="1_5dovg"]
-[ext_resource type="Script" uid="uid://cxrc8dgvyo33u" path="res://scenes/person.gd" id="1_c62xm"]
+[ext_resource type="Script" uid="uid://cxrc8dgvyo33u" path="res://scripts/person.gd" id="1_c62xm"]
 
-[node name="Person" type="TextureRect" unique_id=2105798426]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Person" type="Sprite2D" unique_id=632825489]
 texture = ExtResource("1_5dovg")
 script = ExtResource("1_c62xm")
+
+[node name="PersonName" type="RichTextLabel" parent="." unique_id=1726628576]
+offset_left = -55.666668
+offset_top = -56.493824
+offset_right = 23.666668
+offset_bottom = -17.506176
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 22
+text = "Name"

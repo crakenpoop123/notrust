@@ -1,4 +1,4 @@
-extends TextureRect
+extends Sprite2D
 
 var truth_teller
 

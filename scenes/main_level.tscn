@@ -13,13 +13,8 @@ offset_bottom = 648.0
 columns = 8
 
 [node name="Person" parent="." unique_id=2105798426 instance=ExtResource("2_ufxs0")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 1
-grow_vertical = 1
+position = Vector2(576, 324)
+scale = Vector2(9, 5.0625)
 
 [node name="PersonTimer" type="Timer" parent="." unique_id=1330627345]
 
