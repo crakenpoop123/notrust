@@ -33,16 +33,16 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 100.0
 offset_top = 50.0
-offset_right = 488.0
+offset_right = 606.0
 offset_bottom = 128.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Name: "
 
 [node name="Height" type="RichTextLabel" parent="Person/PersonText" unique_id=943556557]
 layout_mode = 0
-offset_left = 500.0
+offset_left = 608.0
 offset_top = 50.0
-offset_right = 1118.0
+offset_right = 1108.0
 offset_bottom = 128.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Height: "

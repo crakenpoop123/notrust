@@ -40,6 +40,8 @@ func card_pressed():
 	
 	# Decrease the number of cards left
 	$"../..".cards_left -= 1
+	# Remove this from the mines grid (set to 2 bc actually removing it would induce crashes)
+	$"../..".mines[card_pos[0]][card_pos[1]] = 2
 	
 	$"../..".card_just_pressed = true
 	
