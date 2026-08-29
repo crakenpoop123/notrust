@@ -13,26 +13,37 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process():
+func _process(delta: float) -> void:
 	# Stop the process func immediately if this card has already been clicked
-	if !active:
-		return "Dead card"
-	
-	if mouse_touching:
-		$".".modulate = Color(1, 1, 1)
-	else:
-		$".".modulate = Color(0.8, 0.8, 0.8)
-	
-	if Input.is_action_just_pressed("click") and mouse_touching:
-		print(card_pos)
-		print("card is mine: ", mine)
+	if active:
 		
-		# If this card is a mine, change the scene to the lose menu
-		if mine == true:
-			get_tree().change_scene_to_file.call_deferred("res://scenes/lose_menu.tscn")
+		if mouse_touching:
+			$".".modulate = Color(1, 1, 1)
 		else:
-			active = false
+			$".".modulate = Color(0.8, 0.8, 0.8)
+		
+		# What to do when the card is clicked on and the person is not visible
+		if Input.is_action_just_pressed("click") and mouse_touching and !$"../../Person".visible:
+			# If this card is a mine, change the scene to the lose menu
+			if mine == true:
+				get_tree().change_scene_to_file.call_deferred("res://scenes/lose_menu.tscn")
+			else:
+				card_pressed()
 
+# Holds instructions for what to do when the card is pressed
+func card_pressed():
+	# Make the card inactive when it has already been interacted with
+	active = false
+	
+	# Gray out the card
+	$".".modulate = Color(0.4, 0.4, 0.4)
+	
+	# Decrease the number of cards left
+	$"../..".cards_left -= 1
+	
+	$"../..".card_just_pressed = true
+	
+	#print($"../..".cards_left)
 
 func _on_card_area_mouse_entered() -> void:
 	mouse_touching = true

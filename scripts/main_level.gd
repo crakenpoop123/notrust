@@ -2,6 +2,8 @@ extends Node2D
 
 var grid_length
 var card = preload("res://scenes/card.tscn")
+var cards_left
+var card_just_pressed = false
 
 var person_time = 2.5
 
@@ -9,11 +11,22 @@ var num_mines = 5
 var mine_positions: Array
 var mines: Array
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	# When a card is pressed, it will set this to true
+	if card_just_pressed:
+		# Ensures it does not trigger multiple times
+		card_just_pressed = false
+		
+		# Shows the person briefly
+		show_person()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Person.visible = false
 	
 	grid_length = $CardsGrid.columns
+	cards_left = grid_length ** 2
 	
 	setup_mines()
 	
@@ -74,13 +87,18 @@ func generate_mine(i):
 	# If it does already have a mine, get a new mine position
 	return generate_mine(i)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+# Hides the person after a short delay
 func _on_person_timer_timeout() -> void:
-	$Person.visible = !$Person.visible
-	if $Person.visible:
-		$Person/Person.init_text()
+	# Hide the person
+	$Person.visible = false
 	
+
+# Shows the person
+func show_person():
+	$Person.visible = true
+	
+	# Inits the text for this person
+	$Person/Person.init_text()
+	
+	# Start the timer (to hide the person)
 	$Person/PersonTimer.start(person_time)
