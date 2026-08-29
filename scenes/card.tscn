@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://b61llx1a6lij7"]
 
-[ext_resource type="Texture2D" uid="uid://d2g5xvv7prc14" path="res://assets/icon.svg" id="1_d81rb"]
+[ext_resource type="Texture2D" uid="uid://cklijg2cxkqhq" path="res://assets/question_card.png" id="1_6u4wf"]
 [ext_resource type="Script" uid="uid://c7fkiwq024y3s" path="res://scripts/card.gd" id="2_6u4wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5vfr"]
 size = Vector2(51.199997, 51.199997)
 
 [node name="Card" type="TextureRect" unique_id=1398120688]
-offset_right = 128.0
-offset_bottom = 128.0
+offset_right = 79.99999
+offset_bottom = 79.99999
 scale = Vector2(0.05, 0.05)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("1_d81rb")
-expand_mode = 5
+texture = ExtResource("1_6u4wf")
+expand_mode = 3
 script = ExtResource("2_6u4wf")
 
 [node name="CardArea" type="Area2D" parent="." unique_id=937868114]
