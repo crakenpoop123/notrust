@@ -8,10 +8,18 @@
 script = ExtResource("1_v3uhd")
 
 [node name="CardsGrid" type="GridContainer" parent="." unique_id=2016337057]
-offset_left = 252.0
-offset_right = 900.0
+offset_left = 250.0
+offset_right = 898.0
 offset_bottom = 648.0
 columns = 8
+
+[node name="MousePosition" type="RichTextLabel" parent="." unique_id=270582156]
+offset_left = 16.0
+offset_top = 549.0
+offset_right = 268.0
+offset_bottom = 630.0
+theme_override_font_sizes/normal_font_size = 48
+text = "POSITION"
 
 [node name="Person" type="Node2D" parent="." unique_id=629289138]
 

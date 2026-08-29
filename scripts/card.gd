@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		else:
 			$".".modulate = Color(0.8, 0.8, 0.8)
 		
+		
 		# What to do when the card is clicked on and the person is not visible
 		if Input.is_action_just_pressed("click") and mouse_touching and !$"../../Person".visible:
 			# If this card is a mine, change the scene to the lose menu

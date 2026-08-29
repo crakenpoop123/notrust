@@ -13,6 +13,15 @@ var mines: Array
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Compute which card the mouse is touching
+	var offset_mouse_pos = get_global_mouse_position() - $CardsGrid.position
+	var card_width = $CardsGrid.size[0] / grid_length
+	var norm_mouse_pos = offset_mouse_pos / card_width
+	var card_touching = Vector2(floor(norm_mouse_pos[0]), floor(norm_mouse_pos[1]))
+	
+	# SHow the current mouse pos with a text label
+	$MousePosition.text = str(card_touching)
+	
 	# When a card is pressed, it will set this to true
 	if card_just_pressed:
 		# Ensures it does not trigger multiple times
