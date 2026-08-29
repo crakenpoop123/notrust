@@ -5,7 +5,7 @@ var card = preload("res://scenes/card.tscn")
 var cards_left
 var card_just_pressed = false
 
-var person_time = 2.5
+var person_time = 4
 
 var num_mines = 5
 var mine_positions: Array
@@ -19,13 +19,18 @@ func _process(delta: float) -> void:
 	var norm_mouse_pos = offset_mouse_pos / card_width
 	var card_touching = Vector2(floor(norm_mouse_pos[0]), floor(norm_mouse_pos[1]))
 	
-	# SHow the current mouse pos with a text label
+	# Show the current mouse pos with a text label
 	$MousePosition.text = str(card_touching)
+	# Show how many tiles are left
+	$TilesLeft.text = "CARDS LEFT: " + str(cards_left - num_mines)
 	
 	# When a card is pressed, it will set this to true
 	if card_just_pressed:
 		# Ensures it does not trigger multiple times
 		card_just_pressed = false
+		
+		if cards_left <= num_mines:
+			get_tree().change_scene_to_file.call_deferred("res://scenes/win_menu.tscn")
 		
 		# Shows the person briefly
 		show_person()

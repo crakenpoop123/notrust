@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://2kk551451f78"]
+
+[ext_resource type="Texture2D" uid="uid://chlys5y42kewy" path="res://scenes/win_screen.png" id="1_ki55t"]
+
+[node name="WinMenu" type="TextureRect" unique_id=1895020577]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ki55t")

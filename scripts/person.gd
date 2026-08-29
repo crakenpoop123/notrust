@@ -2,7 +2,7 @@ extends Sprite2D
 
 var truth_teller
 var changed_val
-var lie_probability = 0.85
+var lie_probability = 0.15
 
 var text_possibilities = {
 	"Name": ["Bob", "Hubert", "Clive", "Rosamond", "Karl", "Trenton", "Jason", "Emmett", "Cheri", "Annice", "Fiona", "Ellery", "Leatrice", "Ursula", "Meryl", "Aura", "Vanessa", "Larissa", "Keri", "Mathilda", "Georgia", "Goldie", "Spring", "Cade", "Autumn", "Landon", "Garland", "Cecil", "Quincy", "Jeffery", "Lynwood", "Cordell", "Lela", "Wyatt"],
