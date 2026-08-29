@@ -13,21 +13,23 @@ offset_right = 900.0
 offset_bottom = 648.0
 columns = 8
 
-[node name="PersonTimer" type="Timer" parent="." unique_id=1330627345]
+[node name="Person" type="Node2D" parent="." unique_id=629289138]
 
-[node name="Person" type="Sprite2D" parent="." unique_id=871533783]
+[node name="PersonTimer" type="Timer" parent="Person" unique_id=1330627345]
+
+[node name="Person" type="Sprite2D" parent="Person" unique_id=871533783]
 position = Vector2(576, 324)
 scale = Vector2(9, 5.0625)
 texture = ExtResource("2_ufxs0")
 script = ExtResource("3_6we3w")
 
-[node name="PersonText" type="Control" parent="." unique_id=55518850]
+[node name="PersonText" type="Control" parent="Person" unique_id=55518850]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Name" type="RichTextLabel" parent="PersonText" unique_id=476210436]
+[node name="Name" type="RichTextLabel" parent="Person/PersonText" unique_id=476210436]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 50.0
@@ -36,7 +38,7 @@ offset_bottom = 128.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Name: "
 
-[node name="Height" type="RichTextLabel" parent="PersonText" unique_id=943556557]
+[node name="Height" type="RichTextLabel" parent="Person/PersonText" unique_id=943556557]
 layout_mode = 0
 offset_left = 500.0
 offset_top = 50.0
@@ -45,7 +47,7 @@ offset_bottom = 128.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Height: "
 
-[node name="Age" type="RichTextLabel" parent="PersonText" unique_id=1279022755]
+[node name="Age" type="RichTextLabel" parent="Person/PersonText" unique_id=1279022755]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 200.0
@@ -54,7 +56,7 @@ offset_bottom = 278.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Age: "
 
-[node name="Birthday" type="RichTextLabel" parent="PersonText" unique_id=2008748987]
+[node name="Birthday" type="RichTextLabel" parent="Person/PersonText" unique_id=2008748987]
 layout_mode = 0
 offset_left = 500.0
 offset_top = 200.0
@@ -63,7 +65,7 @@ offset_bottom = 278.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Birthday: "
 
-[node name="Speech" type="RichTextLabel" parent="PersonText" unique_id=1040845934]
+[node name="Speech" type="RichTextLabel" parent="Person/PersonText" unique_id=1040845934]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 350.0
@@ -72,4 +74,4 @@ offset_bottom = 608.0
 theme_override_font_sizes/normal_font_size = 48
 text = "INSERT SPEECH HERE"
 
-[connection signal="timeout" from="PersonTimer" to="." method="_on_person_timer_timeout"]
+[connection signal="timeout" from="Person/PersonTimer" to="." method="_on_person_timer_timeout"]

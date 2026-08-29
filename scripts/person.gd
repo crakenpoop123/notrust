@@ -43,9 +43,9 @@ func init_specific_text(text):
 	var first_item
 	if text.name in text_possibilities:
 		first_item = text_array[0]
-		print("First item: ", first_item)
-	else:
-		print("text keys: ", text_possibilities.keys())
+		#print("First item: ", first_item)
+	#else:
+		#print("text keys: ", text_possibilities.keys())
 	
 	# Check if there is custom code for the text
 	if self.has_method(str(first_item)):

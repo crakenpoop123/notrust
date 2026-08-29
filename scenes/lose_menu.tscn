@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://chpy5nhrqop6m"]
+
+[ext_resource type="Texture2D" uid="uid://d2g5xvv7prc14" path="res://assets/icon.svg" id="1_qiql3"]
+
+[node name="LoseMenu" type="TextureRect" unique_id=1346609373]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qiql3")
+
+[node name="LoseText" type="RichTextLabel" parent="." unique_id=847970626]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 48.0
+offset_right = 815.0
+offset_bottom = 189.0
+theme_override_font_sizes/normal_font_size = 96
+text = "YOU LOSE"
